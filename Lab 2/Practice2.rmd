@@ -1,0 +1,44 @@
+---
+title: "Practice2"
+author: "Tepsikoev.S.A"
+date: "2023-03-01"
+output: html_document
+---
+
+```{r}
+library(dplyr)
+library(vroom)
+library(arrow)
+```
+
+```{r}
+  df <-arrow::read_csv_arrow("traffic_security.csv")
+```
+
+```{r}
+knitr::opts_chunk$set(
+  colnames(df) <- c("timestamp","src","dst","port","bytes")
+)
+```
+
+```{r}
+knitr::opts_chunk$set(
+  df_sorted <- df
+)
+```
+
+```{r}
+knitr::opts_chunk$set(
+  df_sorted <- df_sorted[df_sorted$src > 11 & df_sorted$src < 15 & df_sorted$dst < 11 | df_sorted$dst > 15, ]
+)
+```
+
+```{r}
+knitr::opts_chunk$set(
+ found_ip <- df_sorted %>%
+            group_by(src) %>%
+            summarise(bytes = mean(bytes)),
+found_ip <- found_ip[which.max(found_ip$bytes),],
+print(found_ip) 
+)
+```
