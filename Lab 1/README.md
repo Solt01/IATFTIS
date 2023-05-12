@@ -7,6 +7,7 @@ library(tidymodels)
 library(arrow)
 library(dplyr)
 library(ggplot2)
+library(stringr)
 ```
 
 # Задание 1: Надите утечку данных из Вашей сети 
@@ -133,17 +134,6 @@ head(df_data_hours_bytes,3)
     3 160000   979
 
 ## 5. Разбиваем время на часы минуты и секунды
-
-``` r
-library("stringr") 
-```
-
-
-    Attaching package: 'stringr'
-
-    The following object is masked from 'package:recipes':
-
-        fixed
 
 ``` r
 knitr::opts_chunk$set(
@@ -308,12 +298,6 @@ df_data_ports_bytes <- df_data_ports_bytes %>%
 df_data_ports_bytes <- tibble(port = df_data_ports_bytes$port,
                               bytes = df_data_ports_bytes$bytes)
 )
-```
-
-    `summarise()` has grouped output by 'src'. You can override using the `.groups`
-    argument.
-
-``` r
 head(df_data_ports_bytes,3)
 ```
 
@@ -397,14 +381,6 @@ found_ip3 <- df_data_ports_bytes %>%
 
 found_ip3 <- found_ip3[which.max(found_ip3$bytes),]
 )
-```
-
-    `summarise()` has grouped output by 'src'. You can override using the `.groups`
-    argument.
-    `summarise()` has grouped output by 'src'. You can override using the `.groups`
-    argument.
-
-``` r
 print(found_ip3) 
 ```
 
