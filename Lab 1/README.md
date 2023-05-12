@@ -4,38 +4,7 @@
 
 ``` r
 library(tidymodels)
-```
-
-    ── Attaching packages ────────────────────────────────────── tidymodels 1.1.0 ──
-
-    ✔ broom        1.0.4     ✔ recipes      1.0.6
-    ✔ dials        1.2.0     ✔ rsample      1.1.1
-    ✔ dplyr        1.1.2     ✔ tibble       3.2.1
-    ✔ ggplot2      3.4.2     ✔ tidyr        1.3.0
-    ✔ infer        1.0.4     ✔ tune         1.1.1
-    ✔ modeldata    1.1.0     ✔ workflows    1.1.3
-    ✔ parsnip      1.1.0     ✔ workflowsets 1.0.1
-    ✔ purrr        1.0.1     ✔ yardstick    1.2.0
-
-    ── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──
-    ✖ purrr::discard() masks scales::discard()
-    ✖ dplyr::filter()  masks stats::filter()
-    ✖ dplyr::lag()     masks stats::lag()
-    ✖ recipes::step()  masks stats::step()
-    • Use tidymodels_prefer() to resolve common conflicts.
-
-``` r
 library(arrow)
-```
-
-
-    Attaching package: 'arrow'
-
-    The following object is masked from 'package:utils':
-
-        timestamp
-
-``` r
 library(dplyr)
 library(ggplot2)
 ```
